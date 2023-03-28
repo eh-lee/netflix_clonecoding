@@ -5,7 +5,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { ESInput } from "../hook/useInput";
 import { cookies } from "../shared/cookies";
-// import jwt_decode from "jwt"
 import { Helmet } from "react-helmet";
 import { useDispatch } from "react-redux";
 import { __login } from "../redux/modules/loginSlice";
@@ -32,7 +31,7 @@ function Login() {
     const response = await dispatch(__login(user));
     if (response.type === "LOGIN/fulfilled") {
       alert("로그인 되었습니다.");
-      navi("/");
+      navi("/profile");
     }
   };
 

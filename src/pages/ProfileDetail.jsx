@@ -13,13 +13,17 @@ function ProfileDetail() {
     const {data,isLoading,isError,isSuccess} = useQuery({
       querykey: ["GET_PROFILE"],
       queryFn: async () => {
-        const data = await instance.get("/profile")
-        return data.data;
+        const {data} = await instance.get(`/profile`)
+        console.log('안쪽', data);
+        return data;
       },
     })
 
+    console.log(data); //undefined
+
+
     // if (!data || isLoading) return <div>로딩중 ..</div>
-    if (isError) return <div>에러 !!!</div>
+    // if (isError) return <div>에러 !!!</div>
 
   return (
     
